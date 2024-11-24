@@ -1,0 +1,141 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/*  Apply a natural box layout model to all elements  */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+} // end all elements
+
+
+/* --------------------------- BODY --------------------------- */
+body {
+    font-family: $defaultFont;
+    font-weight: $lightWeight;
+    min-width: 320px;
+}
+
+
+/* --------------------------- HEADER --------------------------- */
+#headerWrapper {border-bottom: 1px solid $greyColor;}
+header {
+    display: grid;
+    grid-template-columns: 50px auto 44px;
+    column-gap: $gutter;
+    align-items: center; //vertically
+    padding: .5rem $gutter;
+    span {
+        font-size: 1.6rem;
+        font-weight: $lightWeight;
+        color: $primaryColor;
+    }
+} // end header
+
+
+/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
+
+
+/* --------------------------- MAIN --------------------------- */
+main {
+    h1, h2 {
+        padding: 1rem $gutter.5rem $gutter;
+        font-size: 1.5rem;
+        color: $secondaryColor;
+        font-weight: $lightWeight
+    }
+    p {
+        padding: .5rem $gutter;
+        color: #333;
+        line-height: $leading;
+    }
+}// end main
+
+
+
+
+.swiper, .swiper img {
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  }
+
+    .photo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    section {
+    padding:7px;
+    section.large {
+        display: grid;
+    grid-template-columns: 140px auto;
+    }
+        img{
+            width:100%;
+            height:auto;
+            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+            transition: transform 1s;
+            &:hover {transform: rotate(-15deg);}
+        }
+        p {
+            padding-top: 0;
+        }
+    }//section
+  } //end photo
+
+
+.pngs {
+display: grid;
+gap: 10px;
+margin: 10px;
+
+    section {
+        position: relative;
+        background-color: $primaryColor;
+        border-radius: 10px;
+       
+
+        h2{
+            color:#fff;
+            padding: 0 10px;
+          
+        }
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        img:last-child {
+            position: absolute;
+            bottom: 0;
+        
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------- FOOTER --------------------------- */
+#footerWrapper {
+    background-color: $primaryColor
+} // end footer wrapper
+
+footer {
+    font-size: .85rem;
+    padding: 1rem $gutter;
+    color: $greyColor;
+    text-align: center;
+    line-height: $leading;
+    a {color: $greyColor;}
+}// end footer
